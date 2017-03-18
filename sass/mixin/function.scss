@@ -1,0 +1,22 @@
+/* Functions */
+@mixin transition($time) {
+	-webkit-transition: all $time ease-in-out;
+	-moz-transition: all $time ease-in-out;
+	-o-transition: all $time ease-in-out;
+	transition: all $time ease-in-out;
+}
+
+@mixin radius($round) {
+	-webkit-border-radius: $round;
+	-moz-border-radius: $round;
+	-o-border-radius: $round;
+	border-radius: $round;
+}
+
+@mixin centerVertical() {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

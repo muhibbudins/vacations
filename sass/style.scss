@@ -1,0 +1,518 @@
+/* Import Color */
+@import "color/flat.scss";
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans|Pacifico');
+
+/* Import Function */
+@import "mixin/function.scss";
+@import "mixin/button.scss";
+
+/* Global */
+body {
+	background-color: $white;
+	color: lighten($black, 20%);
+	font-family: 'Open Sans', sans-serif;
+}
+i.fa {
+	margin-right: 8px;
+	
+	&.right {
+		margin-left: 8px;
+		margin-right: 0;
+	}
+}
+
+.title {
+	font-family: 'Bree Serif', serif;
+	font-size: 14px;
+	text-align: center;
+
+	&.huge { font-size: 42px; }
+	&.medium { font-size: 28px; }
+	&.small { font-size: 18px; }
+
+	@media (max-width: 767px) {
+		&.huge { font-size: 26px; }
+		&.medium { font-size: 22px; }
+		&.small { font-size: 16px; }
+	}
+}
+
+/* Navbar */
+.navbar {
+	z-index: 100;
+	background-color: transparent;
+	border-bottom: 0;
+	box-shadow: none;
+
+	.navbar-bars {
+		float: left;
+		font-size: 30px;
+		padding: 10px 20px 10px 30px;
+		color: $peterriver;
+	}
+	.navbar-brand {
+		font-size: 24px;
+		padding: 20px;
+		font-family: 'Pacifico', cursive;
+		color: $peterriver;
+		@include transition(0.2s);
+	}
+	.navbar-nav {
+		$buttonColor : transparentize($nephritis, 0.2);
+
+		li {
+
+			a {
+				padding: 20px;
+				font-size: 15px;
+				border-bottom: 2px solid transparent;
+				color: lighten($black, 15%);
+				@include transition(0.2s);
+
+				&:hover {
+					border-color: $silver;
+				}
+				&.btn {
+					margin: 10px;
+					padding: 9px 20px;
+					font-size: 13px;
+					color: $buttonColor;
+					border: 1px solid $buttonColor;
+					background-color: transparent;
+
+					&:hover {
+						background-color: $buttonColor;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+	
+	&.scrolled {
+		background-color: $white;
+		border-bottom: 1px solid lighten($border, 10%);
+
+		.navbar-brand {
+			font-size: 20px;
+		}
+		.navbar-nav {
+
+			li {
+
+				a {
+					padding: 18px 20px;
+					font-size: 13px;
+					&.btn {
+						padding: 8px 16px;
+						font-size: 13px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		.navbar-brand {
+			float: left;
+			padding: 22px 0;
+			color: $silver;
+		}
+	}
+}
+
+
+/* Sidebar */
+.sidebar {
+	z-index: 102;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 100vh;
+	background-color: $white;
+	box-shadow: -2px 0px 16px 4px $shadow;
+	margin-left: -300px;
+	@include transition(0.4s);
+
+	&.active {
+		margin-left: 0;
+	}
+	.sidebar__nav {
+		width: 100%;
+		height: 100vh;
+		padding-top: 10px;
+
+		li {
+			&.active {
+				a {
+					background-color: $peterriver;
+					color: $white;
+				}
+			}
+			a {
+				color: $black;
+				padding: 15px 20px;
+				@include radius(0px);
+			}
+		}
+	}
+}
+
+/* Sidebar */
+.sidebar-overlay {
+	z-index: 101;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: transparentize($dark, 0.5);
+	visibility: hidden;
+	opacity: 0;
+	@include transition(0.2s);
+
+	&.active {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+/* Hero */
+.hero {
+	height: 100vh;
+	@include centerVertical();
+
+	.title {
+		text-transform: capitalize;
+		line-height: 1.2;
+		text-align: left;
+	}
+	.description {
+		margin: 20px 0 20px 0;
+	}
+}
+
+
+/* Feature */
+.feature {
+	padding: 20px 0 80px 0;
+	
+	.title {
+		margin-bottom: 20px;
+	}
+	.feature-box {
+		text-align: center;
+
+		.feature-icon {
+			position: relative;
+			display: block;
+			margin: 30px auto;
+			text-align: center;
+
+			img {
+				width: auto;
+				height: 125px;
+			}
+		}
+		.feature-title {
+			font-size: 20px;
+			margin: 10px 0;
+		}
+		.feature-description {
+			font-size: 14px;
+		}
+	}
+}
+
+
+/* Popular */
+.portfolio {
+	padding: 20px 0;
+	
+	.title {
+		margin-bottom: 30px;
+	}
+	.popular__portofolio {
+	    display: -webkit-flex;
+	    -webkit-flex-wrap: wrap;
+	    display: flex;   
+	    flex-wrap: wrap;
+
+		.portfolio__item {
+			width: 25%;
+			position: relative;
+			overflow: hidden;
+
+			@media (max-width: 768px) {
+				width: 33.305%;
+			}
+
+			@media (max-width: 480px) {
+				width: 100%;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				z-index: 1;
+			}
+
+			/* 	___________________________________
+				
+				Hover Effect Inspiration
+				by Fabrice Weinberg
+				
+				https://codepen.io/FWeinb/pen/GrpqB
+				___________________________________
+			*/
+			.portofolio__item_overlay {
+				background: transparentize($dark, 0.5);
+				color: $white;
+				@include centerVertical();
+				
+				@mixin overlay_box(){
+					position:absolute;
+					width:100%;
+					height:100%;
+					text-align:center;
+					line-height:inherit;
+					transition:transform .4s ease;
+
+					&:before{
+						position:absolute;
+						content:'';
+						width:70.71%;
+						height:70.71%;
+						transform: rotate(45deg);
+					}  
+					&:hover{
+						transform:translateX(0);
+						z-index:1;
+					}
+					&:hover:before{
+						width:100%;
+						height:100%;
+						transform: none;  
+					}  
+				}
+				&.overlay__right {
+					@include overlay_box();
+					transform:translateX(100%);
+
+					&:before{   
+						right:100%;bottom:0;
+						transform-origin: 100% 100%;
+					}
+					&:hover ~ .overlay__center{
+						transform:translateX(-100%);   
+					}
+				} 
+
+				&.overlay__left {
+					@include overlay_box();
+					transform:translateX(-100%);
+
+					&:before{   
+						left:100%;
+						transform-origin: 0 0;  
+					}   
+					&:hover ~ .overlay__center{
+						transform:translateX(100%);   
+					}
+				}
+
+				&.overlay__top {
+					@include overlay_box();
+					transform:translateY(-100%);
+
+					&:before{   
+						top:100%;right:0;
+						transform-origin:100% 0; 
+					}
+					&:hover ~ .overlay__center{
+						transform:translateY(100%);   
+					}
+				}
+				&.overlay__bottom {
+					@include overlay_box();
+					transform:translateY(100%);
+
+					&:before{   
+						bottom:100%;left:0;
+						transform-origin:0 100%;
+					}
+					&:hover ~ .overlay__center{
+						transform:translateY(-100%);   
+					}
+				}
+				&.overlay__center {
+					@include overlay_box();
+					z-index:-1;
+				}
+				.overlay__inner {
+					display: block;
+					padding: 20px;
+
+					.item__title {
+						font-size: 16px;
+					}
+					.item__description {
+						font-size: 12px;
+						margin: 10px 0;
+					}
+					.btn-default {
+						border-color: $white;
+						color: $white;
+						padding: 8px 16px;
+
+						&:hover {
+							background-color: $white;
+							color: $dark;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Travels */
+.travels {
+	padding: 30px 0 60px 0;
+
+	.title {
+		margin-bottom: 30px;
+	}
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        margin-bottom: 40px;
+        @include centerVertical();
+    }
+}
+
+
+/* Destinations */
+.destinations {
+	padding: 20px 0;
+	
+	.title {
+		margin-bottom: 30px;
+	}
+	.destination-box {
+		padding: 20px;
+		box-shadow: 0px 3px 14px 0px transparentize($shadow, 0.2);
+		@include radius(10px);
+
+		&:hover .destination__image img {
+			transform: scale(1) rotate(0deg);
+		}
+		.destination__image {
+			overflow: hidden;
+			@include radius(10px);
+
+			img {
+				width: 100%;
+				height: auto;
+				transform: scale(1.2) rotate(5deg);
+				@include transition(0.3s);
+			}
+		}
+		.destination__title {
+			font-size: 16px;
+			margin: 10px 0;
+			font-weight: bold;
+		}
+		.destination__description {
+			text-align: justify;
+			font-size: 12px;
+		}
+		.destination__button {
+			padding: 8px;
+			margin-top: 15px;
+		}
+	}
+}
+
+
+/* About */
+.maps {
+	padding: 40px 0 0 0;
+	
+	.title {
+		margin-bottom: 30px;
+	}
+	.maps__inner {
+		@media (max-width: 768px) {
+		    width: 90%;
+		    margin: 0 auto;
+		    margin-bottom: 20px;
+		}
+	}
+}
+
+/* Footer Menu */
+.footer {
+	padding: 40px 0 20px 0;
+	background-color: $midnightblue;
+	color: $white;
+
+	.title {
+		text-align: left;
+		margin-bottom: 10px;
+	}
+	.footer__menu {
+		list-style-type: none;
+		padding: 0;
+		
+		li {
+			margin: 0;
+			margin-bottom: 5px;
+
+			a {
+				color: $white;
+				text-decoration: none;
+				opacity: 0.8;
+				font-size: 13px;
+
+				&:hover {
+					opacity: 1;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		&.menu__icon {
+			display: inline-block;
+			li {
+				margin: 5px;
+				margin-left: 0;
+				float: left;
+				img {
+					width: 50px;
+					height: auto;
+					@include radius(50%);
+				}
+				.btn {
+					padding: 10px 8px 10px 16px;
+					font-size: 20px;
+					border: 0;
+					@include radius(50%);
+				}
+			}
+		}
+	}
+	.footer__copyright {
+		text-align: center;
+		width: 100%;
+		padding-top: 20px;
+		margin-top: 30px;
+		border-top: 1px solid lighten($midnightblue, 10%);
+		color: lighten($midnightblue, 20%);
+	}
+}

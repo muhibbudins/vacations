@@ -1,0 +1,112 @@
+/* Override all button style */
+$default_style : primary warning success info link default danger;
+
+@mixin button__border($background, $color) {
+	background-color: $background;
+	border: 1px solid $color;
+	color: $color;
+}
+
+@each $btn__class in $default_style {
+	.btn-#{$btn__class} {
+		box-shadow: none;
+		border: 0;
+		padding: 11px 36px;
+		text-decoration: none;
+		@include transition(0.3s);
+		@include radius(34px);
+
+		@if $btn__class == 'primary' {
+			background-color: $belizehole;
+			border: 1px solid transparent;
+			&.btn-border {
+				@include button__border(transparent, $belizehole);
+				&:hover {
+					background-color: $belizehole;
+					color: $white;
+				}
+			}
+		}
+
+		@if $btn__class == 'warning' {
+			background-color: lighten($carrot, 5%);
+			border: 1px solid transparent;
+			&.btn-border {
+				@include button__border(transparent, lighten($carrot, 5%));
+				&:hover {
+					background-color: lighten($carrot, 5%);
+					color: $white;
+				}
+			}
+		}
+
+		@if $btn__class == 'success' {
+			background-color: $nephritis;
+			border: 1px solid transparent;
+			&.btn-border {
+				@include button__border(transparent, $nephritis);
+				&:hover {
+					background-color: $nephritis;
+					color: $white;
+				}
+			}
+		}
+
+		@if $btn__class == 'info' {
+			background-color: $peterriver;
+			border: 1px solid transparent;
+			&.btn-border {
+				@include button__border(transparent, $peterriver);
+				&:hover {
+					background-color: $peterriver;
+					color: $white;
+				}
+			}
+		}
+
+		@if $btn__class == 'default' {
+			background-color: $concrete;
+			border: 1px solid transparent;
+			&:hover {
+				color: $concrete !important;
+			}
+			&.btn-border {
+				@include button__border(transparent, $concrete);
+				&:hover {
+					background-color: $concrete;
+					color: $white;
+				}
+			}
+		}
+
+		@if $btn__class == 'danger' {
+			background-color: $alizarin;
+			border: 1px solid transparent;
+			&.btn-border {
+				@include button__border(transparent, $alizarin);
+				&:hover {
+					background-color: $alizarin;
+					color: $white;
+				}
+			}
+		}
+
+		@if $btn__class == 'link' {
+			background-color: $concrete;
+			border: 1px solid transparent;
+			color: $white;
+			&:hover {
+				text-decoration: none;
+				color: $white;
+				background-color: darken($concrete, 3%);
+			}
+			&.btn-border {
+				@include button__border(transparent, $concrete);
+				&:hover {
+					background-color: $concrete;
+					color: $white;
+				}
+			}
+		}
+	}
+}
