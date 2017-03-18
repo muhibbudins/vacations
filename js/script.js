@@ -22,15 +22,12 @@ $(document).ready(function() {
 			navbar.removeClass('scrolled');
 		}
 	}
-
 	$(window).scroll(function() {
 		hasScrolled();
 	});
-
 	$(window).resize(function() {
 		hasScrolled();
 	});
-
 	hasScrolled();
 
 	// Dynamic Sidebar
@@ -43,6 +40,12 @@ $(document).ready(function() {
 		e.preventDefault();
 		$('.sidebar').removeClass('active');
 		$('.sidebar-overlay').removeClass('active');
+	});
+
+	// Sidebar Menu
+	$('.sidebar__nav li').click(function() {
+		$('.sidebar__nav li').removeClass('active');
+		$(this).addClass('active');
 	});
 
 	// Dynamic Overlay Clones
@@ -63,6 +66,7 @@ $(document).ready(function() {
 	// Swiper Initialize
 	new Swiper('#swiper-travel', {
 	    speed: 400,
+	    spaceBetween: 30,
 	    slidesPerView: 5,
         pagination: '.swiper-pagination',
         paginationClickable: true,
@@ -79,7 +83,7 @@ $(document).ready(function() {
 			},
 			640: {
 				slidesPerView: 4,
-				spaceBetween: 60
+				spaceBetween: 30
 			}
 		}
 	});

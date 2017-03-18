@@ -7,7 +7,6 @@
     <title>Vacations</title>
 
     <!-- Meta Tags for SEO -->
-    
     <meta property="og:title" content="Vacations"/>
     <meta property="og:url" content="https://github.com/muhibbudins/vacations/"/>
     <meta property="og:image" content="https://github.com/muhibbudins/vacations/img/preview.png"/>
@@ -29,7 +28,6 @@
     <![endif]-->
     <!-- Import Vendor Style -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/aos.css">
 
@@ -46,10 +44,11 @@
                 <a class="navbar-brand" href="#">Brand</a>
             </div>
             <ul class="nav navbar-nav navbar-right hidden-xs">
-                <li><a href="#" data-slide="slide" data-slide-target=".hero">Home</a></li>
-                <li><a href="#" data-slide="slide" data-slide-target=".feature">Feature</a></li>
-                <li><a href="#" data-slide="slide" data-slide-target=".travels">Travel</a></li>
-                <li><a href="#" data-slide="slide" data-slide-target=".maps">Maps</a></li>
+                <li><a href="" data-slide="slide" data-slide-target=".hero">Home</a></li>
+                <li><a href="" data-slide="slide" data-slide-target=".feature">Feature</a></li>
+                <li><a href="" data-slide="slide" data-slide-target=".portfolio"><span class="circle"></span> Destinations</a></li>
+                <li><a href="" data-slide="slide" data-slide-target=".travels">Travel</a></li>
+                <li><a href="" data-slide="slide" data-slide-target=".maps">Maps</a></li>
             </ul>
         </div>
     </section>
@@ -57,10 +56,11 @@
     <!-- Sidebar -->
     <section class="sidebar visible-xs">
         <ul class="sidebar__nav nav nav-pills nav-stacked">
-            <li role="presentation" class="active"><a href="#" data-slide="slide" data-slide-target=".hero">Home</a></li>
-            <li role="presentation"><a href="#" data-slide="slide" data-slide-target=".feature">Feature</a></li>
-            <li role="presentation"><a href="#" data-slide="slide" data-slide-target=".travels">Travel</a></li>
-            <li role="presentation"><a href="#" data-slide="slide" data-slide-target=".maps">Maps</a></li>
+            <li role="presentation" class="active"><a href="" data-slide="slide" data-slide-target=".hero">Home</a></li>
+            <li role="presentation"><a href="" data-slide="slide" data-slide-target=".feature">Feature</a></li>
+            <li role="presentation"><a href="" data-slide="slide" data-slide-target=".portfolio"><span class="circle"></span> Destinations</a></li>
+            <li role="presentation"><a href="" data-slide="slide" data-slide-target=".travels">Travel</a></li>
+            <li role="presentation"><a href="" data-slide="slide" data-slide-target=".maps">Maps</a></li>
         </ul>
     </section>
     
@@ -72,12 +72,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="img/create-trip.png" alt="Vacation Background" class="img-responsive">
+                    <img src="img/create-trip.png" alt="Vacation Background" class="img-responsive" data-aos="fade-up" data-aos-delay="0">
                 </div>
                 <div class="col-md-6">
-                    <div class="title huge">Lorem ipsum asperiores praesentium amet?</div>
-                    <div class="description">Consectetur adipisicing elit. Eius rerum, distinctio explicabo libero amet, porro reiciendis aliquid praesentium impedit magni autem asperiores quo. Impedit quasi doloremque hic, voluptate nesciunt dolores.</div>
-                    <a href="#" data-slide="slide" data-slide-target=".portfolio" class="btn btn-info btn-border">See Destination</a>
+                    <div class="title huge" data-aos="fade-down" data-aos-delay="200">Lorem ipsum asperiores praesentium amet?</div>
+                    <div class="description" data-aos="fade-up" data-aos-delay="300">Consectetur adipisicing elit. Eius rerum, distinctio explicabo libero amet, porro reiciendis aliquid praesentium impedit magni autem asperiores quo. Impedit quasi doloremque hic, voluptate nesciunt dolores.</div>
+                    <a href="#" data-aos="fade-down" data-aos-delay="400" data-slide="slide" data-slide-target=".portfolio" class="btn btn-info btn-border">See Destination</a>
                 </div>
             </div>
         </div>
@@ -103,9 +103,9 @@
                     <div class="feature-icon">
                         <img src="img/cools.png" alt="Customize Icon">
                     </div>
-                    <div class="feature-title">Customizable</div>
+                    <div class="feature-title">Cools UI</div>
                     <div class="feature-description">
-                        Build with Bootstrap 3 and jQuery combine with SASS CSS Preprocessor and Inkscape for image assets.
+                        Build with Bootstrap 3 and jQuery combine with SASS and BEM CSS.
                     </div>
                 </div>
             </div>
@@ -114,9 +114,9 @@
                     <div class="feature-icon">
                         <img src="img/creative.png" alt="Code Icon">
                     </div>
-                    <div class="feature-title">Code Freak</div>
+                    <div class="feature-title">Customizable</div>
                     <div class="feature-description">
-                        If you want customize just change SASS file and build it with gulp & gulp-sass.
+                        Customize with your imagination just change SASS file and build it with gulp & gulp-sass.
                     </div>
                 </div>
             </div>
@@ -125,9 +125,9 @@
                     <div class="feature-icon">
                         <img src="img/help.png" alt="Code Icon">
                     </div>
-                    <div class="feature-title">Code Freak</div>
+                    <div class="feature-title">Free to Ask</div>
                     <div class="feature-description">
-                        If you want customize just change SASS file and build it with gulp & gulp-sass.
+                        You have question or found some bugs? Don't worry just submit your <a href="https://github.com/muhibbudins/vacations/issues">Issue.</a>
                     </div>
                 </div>
             </div>
@@ -229,28 +229,28 @@
                 <div class="swiper-container" id="swiper-travel">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="img/120x120.png" alt="Dummy Travels">
+                            <img src="img/120x120.png" alt="Dummy Travels" class="img-circle">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/120x120.png" alt="Dummy Travels">
+                            <img src="img/120x120.png" alt="Dummy Travels" class="img-circle">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/120x120.png" alt="Dummy Travels">
+                            <img src="img/120x120.png" alt="Dummy Travels" class="img-circle">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/120x120.png" alt="Dummy Travels">
+                            <img src="img/120x120.png" alt="Dummy Travels" class="img-circle">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/120x120.png" alt="Dummy Travels">
+                            <img src="img/120x120.png" alt="Dummy Travels" class="img-circle">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/120x120.png" alt="Dummy Travels">
+                            <img src="img/120x120.png" alt="Dummy Travels" class="img-circle">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/120x120.png" alt="Dummy Travels">
+                            <img src="img/120x120.png" alt="Dummy Travels" class="img-circle">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/120x120.png" alt="Dummy Travels">
+                            <img src="img/120x120.png" alt="Dummy Travels" class="img-circle">
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -340,9 +340,9 @@
             <div class="col-md-2 col-sm-4 col-xs-6">
                 <div class="title small">About</div>
                 <ul class="footer__menu">
-                    <li><a href="https://github.com/muhibbudins/the-Vacations" target="_blank">Repository</a></li>
-                    <li><a href="https://github.com/muhibbudins/the-Vacations/archive/master.zip" target="_blank">Downloads</a></li>
-                    <li><a href="https://github.com/muhibbudins/the-Vacations/blob/master/LICENSE" target="_blank">License</a></li>
+                    <li><a href="https://github.com/muhibbudins/vacations/" target="_blank">Repository</a></li>
+                    <li><a href="https://github.com/muhibbudins/vacations/archive/master.zip" target="_blank">Downloads</a></li>
+                    <li><a href="https://github.com/muhibbudins/vacations/blob/master/LICENSE" target="_blank">License</a></li>
                     <li><a href="https://www.linkedin.com/in/muhibbudins/" target="_blank">Author</a></li>
                 </ul>
             </div>
@@ -361,7 +361,7 @@
                 </ul>
             </div>
         </div>
-        <div class="footer__copyright">Copyright by Muhibbudin Suretno | License MIT</div>
+        <div class="footer__copyright">Copyright by <a href="https://www.linkedin.com/in/muhibbudins/">Muhibbudin Suretno</a> | <a href="https://github.com/muhibbudins/vacations/blob/master/LICENSE">License MIT</a></div>
     </section>
 
     <!-- Import Vendor Script -->

@@ -60,8 +60,6 @@ i.fa {
 		@include transition(0.2s);
 	}
 	.navbar-nav {
-		$buttonColor : transparentize($nephritis, 0.2);
-
 		li {
 
 			a {
@@ -72,20 +70,15 @@ i.fa {
 				@include transition(0.2s);
 
 				&:hover {
-					border-color: $silver;
+					border-color: $peterriver;
 				}
-				&.btn {
-					margin: 10px;
-					padding: 9px 20px;
-					font-size: 13px;
-					color: $buttonColor;
-					border: 1px solid $buttonColor;
-					background-color: transparent;
-
-					&:hover {
-						background-color: $buttonColor;
-						color: $white;
-					}
+				.circle {
+					position: absolute;
+					top: 10px;
+					left: 10px;
+					padding: 4px;
+					background-color: $alizarin;
+					@include radius(50%);
 				}
 			}
 		}
@@ -206,6 +199,9 @@ i.fa {
 	.feature-box {
 		text-align: center;
 
+		@media (max-width: 480px) {
+			min-height: 300px;
+		}
 		.feature-icon {
 			position: relative;
 			display: block;
@@ -393,6 +389,11 @@ i.fa {
         text-align: center;
         margin-bottom: 40px;
         @include centerVertical();
+
+        img {
+        	width: 100%;
+        	height: auto;
+        }
     }
 }
 
@@ -513,6 +514,10 @@ i.fa {
 		padding-top: 20px;
 		margin-top: 30px;
 		border-top: 1px solid lighten($midnightblue, 10%);
-		color: lighten($midnightblue, 20%);
+		color: lighten($midnightblue, 40%);
+		
+		a {
+			color: lighten($midnightblue, 40%);
+		}
 	}
 }
