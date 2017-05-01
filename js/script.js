@@ -87,4 +87,14 @@ $(document).ready(function() {
 			}
 		}
 	});
+
+  // Initialize Mobile Detect
+  var detect = new MobileDetect(window.navigator.userAgent);
+  if (detect.mobile() !== null || detect.phone() !== null || detect.tablet() !== null) {
+    // Detect user swipe right
+    $('#root').hammer().bind('panright', function(ev) {
+			$('.sidebar').addClass('active');
+			$('.sidebar-overlay').addClass('active');
+    });
+  }
 });
