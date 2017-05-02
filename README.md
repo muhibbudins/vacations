@@ -6,7 +6,6 @@ Wonderful Indonesia! Free template for you with popular destinations from Indone
 
 - [See Demo](https://muhibbudins.github.io/vacations/)
 - [Downloads ](https://github.com/muhibbudins/vacations/archive/master.zip)
-- [Hire Author](https://www.linkedin.com/in/muhibbudins/)
 
 ### Customize & Requirement
 
